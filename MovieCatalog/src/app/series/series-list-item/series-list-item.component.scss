@@ -1,0 +1,19 @@
+.card{
+    cursor: pointer;
+    .dropdown{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .custom-dropdown-toggle{
+        border-radius: 50%;
+        background-color: rgba(255,255,255,.5);
+        padding: 0 5px;
+    }
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

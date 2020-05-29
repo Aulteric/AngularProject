@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Popular Series</h2>
+    <div class="d-flex flex-row">
+        <app-filters
+        (genreChanged)="OnGenreChanged($event)"
+        (yearsChanged)="OnYearsChanged($event)"
+        (sortByChanged)="OnSortByChanged($event)"
+        ></app-filters>
+    <div class="container-fluid movies-list">
+        <app-series-list-item 
+        *ngFor="let show of (series$ | async)" [show] = "show"
+        (addedToWatchlist)="addToWatchlist($event)"
+        (addedToFavorite)="addToFavorite($event)">
+        </app-series-list-item>
+    </div>
+</div>
+</div>

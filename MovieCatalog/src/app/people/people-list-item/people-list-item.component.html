@@ -1,0 +1,10 @@
+<div class="card" (click)="redirect()">
+    <img 
+    src="https://image.tmdb.org/t/p/w220_and_h330_face/{{person.profile_path}}" 
+    class="card-img-top" alt="{{person.name}}"
+    appImageFallback>
+    <div class="card-body">
+      <h5 class="card-title">{{person.name}}</h5>
+      <p class="card-text">{{formatedKnownFor()}}</p>
+    </div>
+  </div>

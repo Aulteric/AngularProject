@@ -1,0 +1,22 @@
+<ng-template [ngIf]="(movie$ | async)"></ng-template>
+<div class="header"
+    [style.background-image]="'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/'+(movie$ | async).backdrop_path+')'">
+    <div class="custom-background">
+        <div class="container">
+            <div class="d-flex p-3">
+                <div class="col-3">
+
+                    <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{(movie$ | async).poster_path}}"
+                        alt="{{(movie$ | async).title}}" appImageFallback>
+                </div>
+                <div class="col-9 movie-details">
+                    <h1>{{(movie$ | async).title}} ({{(movie$ | async).release_date | date: 'y'}})</h1>
+                    <div>
+                        <h4>Overview</h4>
+                        <p>{{(movie$ | async).overview}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

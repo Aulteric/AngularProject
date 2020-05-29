@@ -1,0 +1,21 @@
+<div class="header"
+[style.background-image]="'url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/'+(show$ | async).backdrop_path+')'">
+    <div class="custom-background">
+        <div class="container">
+            <div class="d-flex p-3">
+                <div class="col-3">
+
+                    <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{(show$ | async).poster_path}}" alt="{{(show$ | async).name}}"
+                    appImageFallback>
+                </div>
+                <div class="col-9 movie-details">
+                    <h1>{{(show$ | async).name}} ({{(show$ | async).first_air_date | date: 'y'}})</h1>
+                    <div>
+                        <h4>Overview</h4>
+                        <p>{{(show$ | async).overview}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

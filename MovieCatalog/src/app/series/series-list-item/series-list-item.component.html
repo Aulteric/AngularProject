@@ -1,0 +1,21 @@
+<div class="card" (click)="redirect()">
+    <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{show.poster_path}}" class="card-img-top" alt="{{show.name}}" appImageFallback>
+
+    <div class="dropdown" appDropdown #ref="appDropdown" >
+      <button
+        class="btn btn-light custom-dropdown-toggle"
+        type="button"
+      >
+      <fa-icon icon="ellipsis-h"></fa-icon>
+      </button>
+        <div class="dropdown-menu dropdown-menu-right" [ngClass]="{show: ref.isOpen}">
+          <button class="dropdown-item" (click)="addToWatchlist()">Add to Watchlist</button>
+          <button class="dropdown-item" (click)="addToFavorite()">Add to Favorites</button>
+        </div>
+      </div>
+      
+    <div class="card-body">
+      <h5 class="card-title">{{show.name}}</h5>
+      <p class="card-text">{{show.first_air_date}}</p>
+    </div>
+  </div>
